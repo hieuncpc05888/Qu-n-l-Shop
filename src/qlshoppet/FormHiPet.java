@@ -33,6 +33,7 @@ public class FormHiPet extends javax.swing.JFrame {
         line = new javax.swing.JLabel();
         loadingBar = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         loadingValue = new javax.swing.JLabel();
         loading = new javax.swing.JLabel();
         BGimg = new javax.swing.JLabel();
@@ -46,19 +47,25 @@ public class FormHiPet extends javax.swing.JFrame {
 
         lblPetDouble.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/4.hiPet.gif"))); // NOI18N
         lblPetDouble.setText("jLabel1");
-        BackG.add(lblPetDouble, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 310, 260));
+        BackG.add(lblPetDouble, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 310, 260));
 
         line.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/5.line.jpg"))); // NOI18N
         line.setText("jLabel1");
-        BackG.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 460, 10));
+        BackG.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 470, 10));
 
         loadingBar.setBackground(new java.awt.Color(255, 255, 204));
         BackG.add(loadingBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 370, 710, 20));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 204, 102));
-        jLabel1.setText("Shop Pet");
-        BackG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 210, 40));
+        jLabel1.setText("Welcome to Pet Shop!!");
+        BackG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 410, 40));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/2.logopet.png"))); // NOI18N
+        jLabel2.setText("Pet Shop");
+        BackG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         loadingValue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         loadingValue.setForeground(new java.awt.Color(204, 0, 0));
@@ -146,7 +153,7 @@ public class FormHiPet extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        FormHomePet lg = new FormHomePet();
+        FormLogin lg = new FormLogin(pt, true);
         // sau khi dong se mo ra form nay
         pt.setVisible(false);
         // dong trang loading
@@ -159,6 +166,7 @@ public class FormHiPet extends javax.swing.JFrame {
     private javax.swing.JLabel BGimg;
     private javax.swing.JPanel BackG;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblPetDouble;
     private javax.swing.JLabel line;
     private javax.swing.JLabel loading;
