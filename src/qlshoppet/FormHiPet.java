@@ -4,6 +4,8 @@
  */
 package qlshoppet;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author NGUYEN CHI HIEU
@@ -27,13 +29,46 @@ public class FormHiPet extends javax.swing.JFrame {
     private void initComponents() {
 
         BackG = new javax.swing.JPanel();
+        lblPetDouble = new javax.swing.JLabel();
+        line = new javax.swing.JLabel();
+        loadingBar = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+        loadingValue = new javax.swing.JLabel();
+        loading = new javax.swing.JLabel();
         BGimg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         BackG.setBackground(new java.awt.Color(0, 255, 255));
         BackG.setPreferredSize(new java.awt.Dimension(900, 500));
         BackG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblPetDouble.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/4.hiPet.gif"))); // NOI18N
+        lblPetDouble.setText("jLabel1");
+        BackG.add(lblPetDouble, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 310, 260));
+
+        line.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/5.line.jpg"))); // NOI18N
+        line.setText("jLabel1");
+        BackG.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 460, 10));
+
+        loadingBar.setBackground(new java.awt.Color(255, 255, 204));
+        BackG.add(loadingBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 370, 710, 20));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 102));
+        jLabel1.setText("Shop Pet");
+        BackG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 210, 40));
+
+        loadingValue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        loadingValue.setForeground(new java.awt.Color(204, 0, 0));
+        loadingValue.setText("0 %");
+        BackG.add(loadingValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 340, -1, -1));
+
+        loading.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        loading.setForeground(new java.awt.Color(255, 0, 102));
+        loading.setText("Loading...");
+        BackG.add(loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 170, -1));
 
         BGimg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/3.BackGround.jpg"))); // NOI18N
         BGimg.setText("jLabel1");
@@ -43,7 +78,9 @@ public class FormHiPet extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackG, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BackG, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -51,6 +88,7 @@ public class FormHiPet extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -80,16 +118,51 @@ public class FormHiPet extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormHiPet().setVisible(true);
+        FormHiPet pt = new FormHiPet();
+        pt.setVisible(true);
+
+        try {
+            for (int i = 0; i <= 100; i++) {
+                Thread.sleep(100);
+                pt.loadingValue.setText(i + "%");
+
+                if (i == 10) {
+                    pt.loading.setText("Turning on Modules...");
+                }
+                if (i == 20) {
+                    pt.loading.setText("Loading Modules...");
+                }
+                if (i == 50) {
+                    pt.loading.setText("Connecting to Database...");
+                }
+                if (i == 70) {
+                    pt.loading.setText("Connection Successfull !!...");
+                }
+                if (i == 80) {
+                    pt.loading.setText("Launching Aplication...");
+                }
+                pt.loadingBar.setValue(i);
             }
-        });
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        FormHomePet lg = new FormHomePet();
+        // sau khi dong se mo ra form nay
+        pt.setVisible(false);
+        // dong trang loading
+
+        pt.dispose();
+        lg.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BGimg;
     private javax.swing.JPanel BackG;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblPetDouble;
+    private javax.swing.JLabel line;
+    private javax.swing.JLabel loading;
+    private javax.swing.JProgressBar loadingBar;
+    private javax.swing.JLabel loadingValue;
     // End of variables declaration//GEN-END:variables
 }
