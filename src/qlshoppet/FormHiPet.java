@@ -75,7 +75,7 @@ public class FormHiPet extends javax.swing.JFrame {
         loading.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         loading.setForeground(new java.awt.Color(255, 0, 102));
         loading.setText("Loading...");
-        BackG.add(loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 170, -1));
+        BackG.add(loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 210, -1));
 
         BGimg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/3.BackGround.jpg"))); // NOI18N
         BGimg.setText("jLabel1");
