@@ -47,11 +47,11 @@ public class FormHiPet extends javax.swing.JFrame {
 
         lblPetDouble.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/4.hiPet.gif"))); // NOI18N
         lblPetDouble.setText("jLabel1");
-        BackG.add(lblPetDouble, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 310, 260));
+        BackG.add(lblPetDouble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 310, 260));
 
-        line.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/5.line.jpg"))); // NOI18N
+        line.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/5like.png"))); // NOI18N
         line.setText("jLabel1");
-        BackG.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 470, 10));
+        BackG.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 360, 30));
 
         loadingBar.setBackground(new java.awt.Color(255, 255, 204));
         BackG.add(loadingBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 370, 710, 20));
