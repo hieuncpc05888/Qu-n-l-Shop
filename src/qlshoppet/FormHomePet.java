@@ -60,6 +60,7 @@ public class FormHomePet extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         label1 = new javax.swing.JLabel();
@@ -124,28 +125,31 @@ public class FormHomePet extends javax.swing.JFrame {
         );
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/18password-30.png"))); // NOI18N
-        jLabel16.setText("FORGET PASSWORD");
+        jLabel16.setText("QUÊN MẬT KHẨU");
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/19-pet-30.png"))); // NOI18N
-        jLabel17.setText("PET");
+        jLabel17.setText("THÚ CƯNG");
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/20sale-30.png"))); // NOI18N
-        jLabel18.setText("SALE");
+        jLabel18.setText("KHUYẾN MÃI");
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/21-service-30.png"))); // NOI18N
-        jLabel19.setText("SERVICE");
+        jLabel19.setText("DỊCH VỤ");
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/22-staff-30.png"))); // NOI18N
-        jLabel20.setText("STAFF");
+        jLabel20.setText("NHÂN VIÊN");
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/23.Donnhapmenu-30.png"))); // NOI18N
-        jLabel21.setText("DON NHAP");
+        jLabel21.setText("ĐƠN NHẬP");
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/16.Bill.png"))); // NOI18N
-        jLabel22.setText("BILL");
+        jLabel22.setText("HÓA ĐƠN");
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/17.Thongke.png"))); // NOI18N
-        jLabel23.setText("THONG KE");
+        jLabel23.setText("THỐNG KÊ");
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/26.LoaiPet-30.png"))); // NOI18N
+        jLabel28.setText("LOÀI");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,21 +162,26 @@ public class FormHomePet extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jSeparator1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 53, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel22)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel23)
+                                .addGap(37, 37, 37)))
+                        .addGap(0, 67, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
@@ -198,13 +207,15 @@ public class FormHomePet extends javax.swing.JFrame {
                 .addComponent(jLabel20)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
-                .addGap(26, 26, 26)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel28)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel21)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel22)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel23)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 710));
@@ -350,20 +361,20 @@ public class FormHomePet extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 255, 255));
-        jLabel9.setText("ALL");
+        jLabel9.setText("TẤT CẢ");
 
         jLabel10.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel10.setText("SIZE");
+        jLabel10.setText("KÍCH CỠ");
 
         jLabel11.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel11.setText("HEIGHT");
+        jLabel11.setText("CÂN NẶNG");
 
         jLabel12.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel12.setText("OFFICAL");
+        jLabel12.setText("QUỐC GIA");
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel25.setText("INFORMATION PET");
+        jLabel25.setText("THÔNG TIN PET");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -397,12 +408,12 @@ public class FormHomePet extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
+                                .addComponent(jLabel9)
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel10)
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel11)
+                                .addGap(26, 26, 26)
                                 .addComponent(jLabel12))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(36, Short.MAX_VALUE))))
@@ -520,6 +531,7 @@ public class FormHomePet extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
