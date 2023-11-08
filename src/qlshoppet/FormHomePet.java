@@ -5,13 +5,80 @@
 package qlshoppet;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
+import javax.swing.Action;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTable;
 
 /**
  *
  * @author NGUYEN CHI HIEU
  */
+class ChuyenSlide extends Thread {
+
+    JLabel anh;
+    JButton prev;
+    JButton next;
+
+    ArrayList<String> list = new ArrayList<>();
+    int i = 1;
+
+    public ChuyenSlide(JLabel t, JButton p, JButton n) {
+        anh = t;
+        prev = p;
+        next = n;
+        prev.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (i > 1) {
+                    i--;
+                } else {
+                    i = 3;
+                }
+                anh.setIcon(new ImageIcon("src/imgPet/banner" + i + ".jpg"));
+            }
+        });
+        next.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (i < 3) {
+                    i++;
+                } else {
+                    i = 1;
+                }
+                anh.setIcon(new ImageIcon("src/imgPet/banner" + i + ".jpg"));
+            }
+        });
+        list.add("banner1.jpg");
+        list.add("banner2.jpg");
+        list.add("banner3.jpg");
+    }
+
+    @Override
+    public void run() {
+
+        while (true) {
+            anh.setIcon(new ImageIcon("src/imgPet/banner" + i + ".jpg"));
+            i++;
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                System.out.println("hello");
+            }
+            if (i > 3) {
+                i = 1;
+            }
+
+        }
+    }
+
+}
+
 public class FormHomePet extends javax.swing.JFrame {
 
     /**
@@ -20,6 +87,8 @@ public class FormHomePet extends javax.swing.JFrame {
     public FormHomePet() {
         initComponents();
         setTitle("PET SHOP");
+        new ChuyenSlide(alaskalor, txtPrev, txtNext).start();
+
 //        show(position);
     }
     int position = 0;
@@ -37,7 +106,6 @@ public class FormHomePet extends javax.swing.JFrame {
 //        Image image = icon.getImage().getScaledInstance(label1.getWidth(), label1.getHeight(), Image.SCALE_SMOOTH);
 //        label1.setIcon(new ImageIcon(image));
 //    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,10 +130,6 @@ public class FormHomePet extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        label1 = new javax.swing.JLabel();
-        txtPrev = new javax.swing.JLabel();
-        txtNext = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -87,6 +151,9 @@ public class FormHomePet extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        alaskalor = new javax.swing.JLabel();
+        txtPrev = new javax.swing.JButton();
+        txtNext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -222,22 +289,6 @@ public class FormHomePet extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField1.setText("FIND............");
-
-        label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/11.husky.jpg"))); // NOI18N
-        label1.setText("jLabel1");
-
-        txtPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/24.Prev.png"))); // NOI18N
-        txtPrev.setText("jLabel4");
-
-        txtNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/25-next.png"))); // NOI18N
-        txtNext.setText("jLabel5");
-        txtNext.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtNextMousePressed(evt);
-            }
-        });
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/13.Pomeranian.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
 
@@ -280,7 +331,7 @@ public class FormHomePet extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/14.Munchkin.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/banner2.jpg"))); // NOI18N
         jLabel7.setText("jLabel6");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -318,7 +369,7 @@ public class FormHomePet extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/12.alaska.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/banner3.jpg"))); // NOI18N
         jLabel8.setText("jLabel6");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -376,11 +427,17 @@ public class FormHomePet extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(0, 255, 255));
         jLabel25.setText("THÔNG TIN PET");
 
+        alaskalor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/banner1.jpg"))); // NOI18N
+        alaskalor.setText("jLabel29");
+
+        txtPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/24.Prev.png"))); // NOI18N
+
+        txtNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/25-next.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -392,21 +449,17 @@ public class FormHomePet extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtPrev)
+                        .addGap(66, 66, 66)
+                        .addComponent(alaskalor, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(txtNext)
+                        .addGap(208, 208, 208))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(txtPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78)))
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(txtNext, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(213, 213, 213))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(33, 33, 33)
@@ -421,19 +474,19 @@ public class FormHomePet extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrev)
-                            .addComponent(txtNext))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(alaskalor, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtPrev)
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtNext)
+                        .addGap(110, 110, 110)))
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -458,22 +511,6 @@ public class FormHomePet extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNextMousePressed
-//        new Thread();
-//        try {
-//            Thread.sleep(300);
-//        } catch (InterruptedException e) {
-////            Logger.getLogger(slider.class.getName()).log(Level.SEVERE, null, e);
-//            int p = this.label1.getX();
-//            
-//            if(p>-1){
-////                Animacion.animacion.mover_izquierda(900, 200 , 1, 2, label1);
-//            }
-//            position = position +1;
-//            show(position);
-//        }
-    }//GEN-LAST:event_txtNextMousePressed
 
     /**
      * @param args the command line arguments
@@ -511,6 +548,7 @@ public class FormHomePet extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alaskalor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -547,9 +585,7 @@ public class FormHomePet extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel label1;
-    private javax.swing.JLabel txtNext;
-    private javax.swing.JLabel txtPrev;
+    private javax.swing.JButton txtNext;
+    private javax.swing.JButton txtPrev;
     // End of variables declaration//GEN-END:variables
 }

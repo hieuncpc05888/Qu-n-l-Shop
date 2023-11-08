@@ -236,6 +236,7 @@ public class FormLogin extends javax.swing.JDialog {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         FormHomePet h = new FormHomePet();
         h.show();
+        this.dispose();
 
 
     }//GEN-LAST:event_btnLoginActionPerformed
