@@ -36,6 +36,10 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -80,6 +84,18 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 204, 204));
         jLabel6.setText("NGÀY BĐ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+
+        jButton1.setText("THÊM");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+
+        jButton2.setText("CẬP NHẬT");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
+
+        jButton3.setText("XÓA");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 90, -1));
+
+        jButton4.setText("MỚI");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/27.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -137,6 +153,10 @@ public class FormKhuyenMai extends javax.swing.JFrame {
     private javax.swing.JTextField NGAYBD;
     private javax.swing.JTextField NGAYKT;
     private javax.swing.JSpinner PHANTRAMKM;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
