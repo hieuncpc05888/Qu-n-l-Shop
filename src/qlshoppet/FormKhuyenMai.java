@@ -41,6 +41,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        XemChiTiet = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -91,20 +92,30 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         jLabel6.setText("NGÀY BĐ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-add-30.png"))); // NOI18N
         jButton1.setText("THÊM");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 40));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-update-30.png"))); // NOI18N
         jButton2.setText("CẬP NHẬT");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-delete-30.png"))); // NOI18N
         jButton3.setText("XÓA");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 90, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 120, -1));
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-reset-30.png"))); // NOI18N
         jButton4.setText("MỚI");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, 40));
 
-        jButton5.setText("XEM ");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-preview.gif"))); // NOI18N
+        jButton5.setOpaque(true);
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 40, 40));
+
+        XemChiTiet.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        XemChiTiet.setForeground(new java.awt.Color(255, 255, 0));
+        XemChiTiet.setText("XEM");
+        getContentPane().add(XemChiTiet, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/27.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -114,6 +125,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 410, 490));
 
+        jTable1.setBackground(new java.awt.Color(255, 255, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -127,7 +139,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 800, 180));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 800, 170));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/3.BackGround.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
@@ -185,6 +197,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
     private javax.swing.JTextField NGAYBD;
     private javax.swing.JTextField NGAYKT;
     private javax.swing.JSpinner PHANTRAMKM;
+    private javax.swing.JLabel XemChiTiet;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
