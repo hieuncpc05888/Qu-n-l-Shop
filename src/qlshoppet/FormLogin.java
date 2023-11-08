@@ -46,7 +46,7 @@ public class FormLogin extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         hidepass = new javax.swing.JLabel();
         showpass = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         txtPass = new javax.swing.JPasswordField();
@@ -173,11 +173,16 @@ public class FormLogin extends javax.swing.JDialog {
         });
         jPanel2.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 29, 55));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 204, 204));
-        jButton1.setText("LOGIN");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 405, 378, 45));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(0, 204, 204));
+        btnLogin.setText("LOGIN");
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 405, 378, 45));
 
         jLabel10.setText("FORGET PASSWORD?");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -216,8 +221,8 @@ public class FormLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_showpassMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        for(double i=0.0; i<=1.0; i = i+0.1){
-            String val = i+"";
+        for (double i = 0.0; i <= 1.0; i = i + 0.1) {
+            String val = i + "";
             float f = Float.valueOf(val);
             this.setOpacity(f);
             //xuat hien do mo ao
@@ -227,6 +232,13 @@ public class FormLogin extends javax.swing.JDialog {
             }
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        FormHomePet h = new FormHomePet();
+        h.show();
+
+
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,10 +283,10 @@ public class FormLogin extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLogin;
     private javax.swing.JLabel dauX;
     private javax.swing.JLabel hidepass;
     private javax.swing.JLabel imgMain;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

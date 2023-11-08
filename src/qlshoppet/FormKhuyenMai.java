@@ -47,7 +47,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        logo.setForeground(new java.awt.Color(255, 255, 51));
+        logo.setForeground(new java.awt.Color(255, 255, 0));
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/2.logopet.png"))); // NOI18N
         logo.setText("Pet Shop");
         getContentPane().add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
