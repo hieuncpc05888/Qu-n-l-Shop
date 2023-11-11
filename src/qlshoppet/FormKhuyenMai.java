@@ -4,6 +4,8 @@
  */
 package qlshoppet;
 
+import DataHelper.ImagePets;
+
 /**
  *
  * @author NGUYEN CHI HIEU
@@ -16,6 +18,12 @@ public class FormKhuyenMai extends javax.swing.JFrame {
     public FormKhuyenMai() {
         initComponents();
         setResizable(false); //not max screen
+        init();
+    }
+
+    void init() {
+        setIconImage(ImagePets.getAppIcon());
+        setTitle("KHUYẾN MÃI");
     }
 
     /**
@@ -41,6 +49,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         XemChiTiet = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,60 +66,63 @@ public class FormKhuyenMai extends javax.swing.JFrame {
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/2.logopet.png"))); // NOI18N
         logo.setText("Pet Shop");
         getContentPane().add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        getContentPane().add(MAKM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 330, 40));
+        getContentPane().add(MAKM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 330, 40));
 
         PHANTRAMKM.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         PHANTRAMKM.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(0.0f), Float.valueOf(0.0f), Float.valueOf(100.0f), Float.valueOf(0.1f)));
         PHANTRAMKM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(PHANTRAMKM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 330, 40));
+        getContentPane().add(PHANTRAMKM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 330, 40));
 
         NGAYBD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NGAYBDActionPerformed(evt);
             }
         });
-        getContentPane().add(NGAYBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 330, 40));
-        getContentPane().add(NGAYKT, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 330, 40));
+        getContentPane().add(NGAYBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 330, 40));
+        getContentPane().add(NGAYKT, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 330, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 255, 255));
         jLabel3.setText("MÃ KM");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 255, 255));
         jLabel4.setText("% KM");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 255, 255));
         jLabel5.setText("NGÀY KT");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 204));
         jLabel6.setText("NGÀY BĐ");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-add-30.png"))); // NOI18N
         jButton1.setText("THÊM");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, 40));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-update-30.png"))); // NOI18N
         jButton2.setText("CẬP NHẬT");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-delete-30.png"))); // NOI18N
         jButton3.setText("XÓA");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 120, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 120, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-reset-30.png"))); // NOI18N
         jButton4.setText("MỚI");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, -1, 40));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-preview.gif"))); // NOI18N
         jButton5.setOpaque(true);
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 40, 40));
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/25-next.png"))); // NOI18N
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 410, 60, 40));
 
         XemChiTiet.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         XemChiTiet.setForeground(new java.awt.Color(255, 255, 0));
@@ -203,6 +215,7 @@ public class FormKhuyenMai extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -4,6 +4,8 @@
  */
 package qlshoppet;
 
+import DataHelper.ImagePets;
+
 /**
  *
  * @author NGUYEN CHI HIEU
@@ -15,7 +17,14 @@ public class FormHoaDon extends javax.swing.JFrame {
      */
     public FormHoaDon() {
         initComponents();
-        
+        setResizable(false); //not max screen
+        init();
+    }
+
+    void init() {
+        setIconImage(ImagePets.getAppIcon());
+        setTitle("HÓA ĐƠN");
+
     }
 
     /**
@@ -42,6 +51,8 @@ public class FormHoaDon extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         BG = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -131,6 +142,12 @@ public class FormHoaDon extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 270, 110));
 
+        jButton5.setText("<<");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
+
+        jButton6.setText(">>");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, -1, -1));
+
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/33.HoaDon.jpg"))); // NOI18N
         BG.setText("jLabel1");
         getContentPane().add(BG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 360));
@@ -200,6 +217,8 @@ public class FormHoaDon extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -4,6 +4,8 @@
  */
 package qlshoppet;
 
+import DataHelper.ImagePets;
+
 /**
  *
  * @author NGUYEN CHI HIEU
@@ -15,6 +17,12 @@ public class FormPet extends javax.swing.JFrame {
      */
     public FormPet() {
         initComponents();
+        setResizable(false); //not max screen
+        init();
+    }
+
+    void init() {
+        setIconImage(ImagePets.getAppIcon());
         setTitle("PET");
     }
 
@@ -70,7 +78,7 @@ public class FormPet extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LOGO.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LOGO.setForeground(new java.awt.Color(255, 255, 0));
+        LOGO.setForeground(new java.awt.Color(255, 255, 51));
         LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/2.logopet.png"))); // NOI18N
         LOGO.setText("Pet Shop");
         jPanel1.add(LOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));

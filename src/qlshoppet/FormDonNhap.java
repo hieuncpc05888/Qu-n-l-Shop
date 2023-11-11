@@ -4,6 +4,8 @@
  */
 package qlshoppet;
 
+import DataHelper.ImagePets;
+
 /**
  *
  * @author NGUYEN CHI HIEU
@@ -15,6 +17,13 @@ public class FormDonNhap extends javax.swing.JFrame {
      */
     public FormDonNhap() {
         initComponents();
+        setResizable(false); //not max screen
+        init();
+    }
+
+    void init() {
+        setIconImage(ImagePets.getAppIcon());
+        setTitle("ĐƠN NHẬP");
     }
 
     /**
@@ -65,7 +74,7 @@ public class FormDonNhap extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("ĐƠN NHẬP");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 400, 30));
