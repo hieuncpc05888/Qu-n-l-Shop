@@ -73,6 +73,7 @@ public class FormForgetPass extends javax.swing.JFrame {
         jLabel5.setText("MẬT KHẨU MỚI");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPet/icons8-send-30.png"))); // NOI18N
         jButton1.setText("GỬI");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
 
