@@ -130,7 +130,7 @@ public class FormHiPet extends javax.swing.JFrame {
 
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(100);
+                Thread.sleep(20);
                 pt.loadingValue.setText(i + "%");
 
                 if (i == 10) {
